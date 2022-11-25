@@ -8,6 +8,7 @@ class HomeBinding extends Bindings {
   void dependencies() {
     Get.lazyPut(() => BottomNavigationController());
     Get.lazyPut(() => HomeController());
+
     // Get.lazyPut(() => ProfileController(Get.find(),Get.find()));
   }
 }

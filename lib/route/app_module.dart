@@ -1,3 +1,10 @@
+import 'package:society_management/binding/booking_binding.dart';
+import 'package:society_management/binding/community_binding.dart';
+import 'package:society_management/binding/theater_binding.dart';
+import 'package:society_management/page/ui/booking_page.dart';
+import 'package:society_management/page/ui/community_page.dart';
+import 'package:society_management/page/ui/theater_page.dart';
+
 import '../binding/home_binding.dart';
 import '../page/ui/detail_page.dart';
 import '../binding/all_product_binding.dart';
@@ -29,6 +36,21 @@ class AppPage {
         name: AppRoute.detailPage,
         page: () =>  const DetailPage(),
         binding: DetailBinding()
+    ),
+    GetPage(
+      name: AppRoute.bookingPage,
+      page: () => const BookingPage(),
+      binding: BookingBinding()
+    ),
+    GetPage(
+      name: AppRoute.communityPage,
+      page: ()=> const CommunityPage(),
+      binding:  CommunityBinding(),
+    ),
+    GetPage(
+      name: AppRoute.theaterPage,
+      page: ()=> const TheaterPage(),
+      binding: TheaterBinding(),
     ),
     // GetPage(
     //   name: AppRoute.login,

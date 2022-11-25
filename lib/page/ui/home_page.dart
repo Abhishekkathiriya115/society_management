@@ -53,6 +53,7 @@ class HomePage extends GetView<HomeController> {
                   ),
                   SizedBox(height: Get.width/5),
                   categoryByProduct('Quick Action',controller.moncaseApp,controller.name,controller.names),
+                  quickBookings('Quick Bookings', controller.moncaseApp, controller.bookingNameList,),
                   const SizedBox(height: 20),
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0,right: 20,bottom: 20),
@@ -205,6 +206,64 @@ class HomePage extends GetView<HomeController> {
                           ),
                           const SizedBox(height: 15),
                           normalTextWidget(names[index], 15, mainColor),
+                          const SizedBox(height: 15),
+                        ],
+                      ),
+                    ),
+                  )),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  quickBookings(title,List image,List name,){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0,right: 20,bottom: 20),
+          child: Row(
+            children: [
+              boldTextWidget(title,23,mainColor),
+              const Spacer(),
+            ],
+          ),
+        ),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ...List.generate(image.length,
+                      (index) => InkWell(
+                    onTap: (){
+                      Get.toNamed(AppRoute.theaterPage);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15.0,right: 15),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Card(
+                            elevation: 10,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0),
+                            ),
+                            child: Hero(
+                              tag: image[index],
+                              child: Container(
+                                  height: Get.width/5,
+                                  width:Get.width/5,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                    // image:  DecorationImage(image: AssetImage(image[index]))
+                                  )),
+                            ),
+                          ),
+                          const SizedBox(height: 15),
+                          normalTextWidget(name[index], 15, mainColor),
                           const SizedBox(height: 15),
                         ],
                       ),

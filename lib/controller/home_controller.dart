@@ -62,4 +62,8 @@ class HomeController extends GetxController {
     'cab',
     'service',
   ];
+
+  List bookingNameList = [
+    'Theater','Swiming Pool','Function Hall','Club House'
+  ];
 }

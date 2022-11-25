@@ -18,7 +18,6 @@ class BottomNavigationPage extends GetView<BottomNavigationController> {
                 controller.redirectPage(),
                 controller.redirectPage(),
                 controller.redirectPage(),
-                controller.redirectPage(),
               ]),
           bottomNavigationBar: _bottomNavigationBar()),
     );
@@ -38,10 +37,6 @@ class BottomNavigationPage extends GetView<BottomNavigationController> {
                 icon: _notification(
                     iconData: Icons.home_outlined, notificationIconShow: false),
                 label: 'Home'),
-            BottomNavigationBarItem(
-                icon: _notification(
-                    iconData: Icons.history, notificationIconShow: false),
-                label: 'History'),
             BottomNavigationBarItem(
                 icon: _notification(
                     iconData: Icons.category, notificationIconShow: false),
