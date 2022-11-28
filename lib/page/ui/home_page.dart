@@ -52,8 +52,8 @@ class HomePage extends GetView<HomeController> {
                     ),
                   ),
                   SizedBox(height: Get.width/5),
-                  categoryByProduct('Quick Action',controller.moncaseApp,controller.name,controller.names),
-                  quickBookings('Quick Bookings', controller.moncaseApp, controller.bookingNameList,),
+                  quickAction('Quick Action',controller.quickActionImage1,controller.quickActionImage2,controller.quickActionName2,controller.quickActionName1),
+                  quickBookings('Quick Bookings', controller.quickBookingImage, controller.bookingNameList,),
                   const SizedBox(height: 20),
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0,right: 20,bottom: 20),
@@ -78,7 +78,7 @@ class HomePage extends GetView<HomeController> {
                         );
                       },
                       indicatorLayout: PageIndicatorLayout.COLOR,
-                      itemCount: controller.categoryImage.length,
+                      itemCount: controller.eventBanner.length,
                     ),
                   ),
                    Divider(),
@@ -101,10 +101,11 @@ class HomePage extends GetView<HomeController> {
                       height: Get.width/2.3,
                       child: Swiper(
                         itemBuilder: (context, index) {
-                          return Image.asset(controller.categoryImage[index], fit: BoxFit.fill);
+                          return Image.asset(controller.eventBanner[index], fit: BoxFit.fill);
                         },
                         indicatorLayout: PageIndicatorLayout.COLOR,
-                        itemCount: controller.categoryImage.length,
+                        itemCount: controller.eventBanner.length,
+                        autoplay: true,
                         pagination: const SwiperPagination(),
                       ),
                     ),
@@ -118,7 +119,7 @@ class HomePage extends GetView<HomeController> {
     );
   }
 
-  categoryByProduct(title,List image,List name,List names) {
+  quickAction(title,List image1,List image2,List name,List names) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -131,89 +132,9 @@ class HomePage extends GetView<HomeController> {
             ],
           ),
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ...List.generate(image.length,
-                      (index) => InkWell(
-                    onTap: (){
-                      Get.toNamed(AppRoute.detailPage,arguments:image[index] );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15.0,right: 15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Card(
-                            elevation: 10,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                            child: Hero(
-                              tag: image[index],
-                              child: Container(
-                                  height: Get.width/5,
-                                  width:Get.width/5,
-                                  decoration: BoxDecoration(
-                                    color: Colors.amber,
-                                      borderRadius: BorderRadius.circular(25),
-                                      // image:  DecorationImage(image: AssetImage(image[index]))
-                                  )),
-                            ),
-                          ),
-                          const SizedBox(height: 15),
-                          normalTextWidget(name[index], 15, mainColor),
-                        ],
-                      ),
-                    ),
-                  )),
-            ],
-          ),
-        ),
+        smallBoxWidget(image1, name),
         const SizedBox(height: 25),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ...List.generate(image.length,
-                      (index) => InkWell(
-                    onTap: (){
-                      Get.toNamed(AppRoute.detailPage,arguments:image[index] );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15.0,right: 15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Card(
-                            elevation: 10,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                            child: Hero(
-                              tag: image[index],
-                              child: Container(
-                                  height: Get.width/5,
-                                  width:Get.width/5,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(25),
-                                      // image:  DecorationImage(image: AssetImage(image[index]))
-                                  )),
-                            ),
-                          ),
-                          const SizedBox(height: 15),
-                          normalTextWidget(names[index], 15, mainColor),
-                          const SizedBox(height: 15),
-                        ],
-                      ),
-                    ),
-                  )),
-            ],
-          ),
-        )
+        smallBoxWidget(image2, name),
       ],
     );
   }
@@ -231,49 +152,50 @@ class HomePage extends GetView<HomeController> {
             ],
           ),
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ...List.generate(image.length,
-                      (index) => InkWell(
-                    onTap: (){
-                      Get.toNamed(AppRoute.theaterPage);
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 15.0,right: 15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Card(
-                            elevation: 10,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0),
-                            ),
-                            child: Hero(
-                              tag: image[index],
-                              child: Container(
-                                  height: Get.width/5,
-                                  width:Get.width/5,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(25),
-                                    // image:  DecorationImage(image: AssetImage(image[index]))
-                                  )),
-                            ),
-                          ),
-                          const SizedBox(height: 15),
-                          normalTextWidget(name[index], 15, mainColor),
-                          const SizedBox(height: 15),
-                        ],
-                      ),
-                    ),
-                  )),
-            ],
-          ),
-        )
+        smallBoxWidget(image, name)
       ],
     );
+  }
+
+  smallBoxWidget(List<dynamic> image, List<dynamic> name) {
+    return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ...List.generate(name.length,
+                    (index) => InkWell(
+                  onTap: (){
+                    Get.toNamed(AppRoute.theaterPage);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 15.0,right: 15),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Card(
+                          elevation: 10,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                          child: Container(
+                              height: Get.width/5,
+                              width:Get.width/5,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                image:  DecorationImage(image: AssetImage(image[index]))
+                              )),
+                        ),
+                        const SizedBox(height: 15),
+                        normalTextWidget(name[index], 15, mainColor),
+                        const SizedBox(height: 15),
+                      ],
+                    ),
+                  ),
+                )),
+          ],
+        ),
+      );
   }
 
 }

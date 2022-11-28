@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:society_management/page/ui/community_page.dart';
-
-import '../page/ui/category_page.dart';
 import '../page/ui/home_page.dart';
 import '../page/ui/profile_page.dart';
 

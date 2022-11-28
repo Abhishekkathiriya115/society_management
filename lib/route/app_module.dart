@@ -6,11 +6,7 @@ import 'package:society_management/page/ui/community_page.dart';
 import 'package:society_management/page/ui/theater_page.dart';
 
 import '../binding/home_binding.dart';
-import '../page/ui/detail_page.dart';
-import '../binding/all_product_binding.dart';
-import '../binding/detail_binding.dart';
 import '../binding/splash_binding.dart';
-import '../page/ui/all_product_page.dart';
 import '../page/ui/splash_page.dart';
 import '../page/widget/bottom_navigationbar.dart';
 import 'route.dart';
@@ -27,16 +23,6 @@ class AppPage {
         name: AppRoute.home,
         page: () =>  const BottomNavigationPage(),
         binding: HomeBinding()),
-    GetPage(
-        name: AppRoute.allProduct,
-        page: () =>  const AllProductPage(),
-      binding: AllProductBinding()
-      ),
-    GetPage(
-        name: AppRoute.detailPage,
-        page: () =>  const DetailPage(),
-        binding: DetailBinding()
-    ),
     GetPage(
       name: AppRoute.bookingPage,
       page: () => const BookingPage(),
