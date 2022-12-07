@@ -43,7 +43,7 @@ class ProfilePage extends GetView<HomeController> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 15),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +76,7 @@ class ProfilePage extends GetView<HomeController> {
                  mainAxisAlignment: MainAxisAlignment.start,
                  children: [
                    boldTextWidget('Address : ', 18, pinkColor),
-                   SizedBox(width:Get.width/1.5,child: normalTextWidget('#409 Pride Square, Opp. Alap Avanue Society, J.K. chowk, University Road, Raikot- 360005 ', 18,mainColor)),
+                   SizedBox(width:Get.width/1.6,child: normalTextWidget('#409 Pride Square, Opp. Alap Avanue Society, J.K. chowk, University Road, Raikot- 360005 ', 18,mainColor)),
                  ],
                ),
                const SizedBox(height: 15),
