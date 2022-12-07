@@ -220,30 +220,31 @@ Widget normalTextWidget(String text, double fs,color) {
 // }
 //
 //
-// //button
-// Widget kPrimaryButton(String text, Function fun) {
-//   return GestureDetector(
-//     onTap: () async {
-//       fun();
-//     },
-//     child: Card(
-//       elevation: 10,
-//       shape: RoundedRectangleBorder(
-//         borderRadius: BorderRadius.circular(20.0),
-//       ),
-//       child: Container(
-//         height: 45,
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(20),
-//           gradient: gradientColor(),
-//         ),
-//         child: Center(
-//             child: Text(text,
-//                 style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color:Colors.white))),
-//       ),
-//     ),
-//   );
-// }
+//button
+Widget kPrimaryButton(String text, Function fun) {
+  return GestureDetector(
+    onTap: () async {
+      fun();
+    },
+    child: Card(
+      elevation: 10,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Container(
+        height: 50,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: mainColor
+          // gradient: gradientColor(),
+        ),
+        child: Center(
+            child: Text(text,
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18,color:Colors.white))),
+      ),
+    ),
+  );
+}
 //
 //
 // Widget buildSearchableDropdown(item,value,Function fn(value),hint,searchHint) {

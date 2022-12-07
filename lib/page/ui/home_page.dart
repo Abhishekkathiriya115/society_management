@@ -53,7 +53,7 @@ class HomePage extends GetView<HomeController> {
                   ),
                   SizedBox(height: Get.width/5),
                   quickAction('Quick Action',controller.quickActionImage1,controller.quickActionImage2,controller.quickActionName2,controller.quickActionName1),
-                  quickBookings('Quick Bookings', controller.quickBookingImage, controller.bookingNameList,),
+                  quickBookings('Quick Bookings', controller.quickBookingImage, controller.bookingNameList),
                   const SizedBox(height: 20),
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0,right: 20,bottom: 20),
@@ -132,9 +132,9 @@ class HomePage extends GetView<HomeController> {
             ],
           ),
         ),
-        smallBoxWidget(image1, name),
+        smallBoxWidget(image1, name,controller.bookingPage),
         const SizedBox(height: 25),
-        smallBoxWidget(image2, name),
+        smallBoxWidget(image2, name,controller.bookingPage),
       ],
     );
   }
@@ -152,12 +152,12 @@ class HomePage extends GetView<HomeController> {
             ],
           ),
         ),
-        smallBoxWidget(image, name)
+        smallBoxWidget(image, name,controller.bookingPage)
       ],
     );
   }
 
-  smallBoxWidget(List<dynamic> image, List<dynamic> name) {
+  smallBoxWidget(List<dynamic> image, List<dynamic> name,List page) {
     return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
@@ -166,7 +166,7 @@ class HomePage extends GetView<HomeController> {
             ...List.generate(name.length,
                     (index) => InkWell(
                   onTap: (){
-                    Get.toNamed(AppRoute.theaterPage);
+                    Get.toNamed(page[index]);
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(left: 15.0,right: 15),

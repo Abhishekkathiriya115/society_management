@@ -6,9 +6,9 @@ abstract class AppRoute {
   static const allProduct = '/allProduct';
   static const profile = '/profile';
   static const detailPage = '/detailPage';
-  static const bookingPage = '/bookingPage';
   static const communityPage = '/communityPage';
   static const theaterPage = '/theaterPage';
+  static const functionHallPage = '/functionHallPage';
 
   static const editProfile = '/editProfile';
   static const otpPage = '/otpPage';

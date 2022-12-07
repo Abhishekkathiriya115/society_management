@@ -1,8 +1,8 @@
-import 'package:society_management/binding/booking_binding.dart';
 import 'package:society_management/binding/community_binding.dart';
+import 'package:society_management/binding/function_hall_binding.dart';
 import 'package:society_management/binding/theater_binding.dart';
-import 'package:society_management/page/ui/booking_page.dart';
 import 'package:society_management/page/ui/community_page.dart';
+import 'package:society_management/page/ui/function_hall_page.dart';
 import 'package:society_management/page/ui/theater_page.dart';
 
 import '../binding/home_binding.dart';
@@ -24,11 +24,6 @@ class AppPage {
         page: () =>  const BottomNavigationPage(),
         binding: HomeBinding()),
     GetPage(
-      name: AppRoute.bookingPage,
-      page: () => const BookingPage(),
-      binding: BookingBinding()
-    ),
-    GetPage(
       name: AppRoute.communityPage,
       page: ()=> const CommunityPage(),
       binding:  CommunityBinding(),
@@ -37,6 +32,11 @@ class AppPage {
       name: AppRoute.theaterPage,
       page: ()=> const TheaterPage(),
       binding: TheaterBinding(),
+    ),
+    GetPage(
+      name: AppRoute.functionHallPage,
+      page: ()=> const FunctionHallPage(),
+      binding: FunctionHallBinding(),
     ),
     // GetPage(
     //   name: AppRoute.login,

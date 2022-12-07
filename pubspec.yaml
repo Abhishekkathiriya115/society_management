@@ -42,6 +42,9 @@ dependencies:
   animated_text_kit:
   transformable_list_view:
   card_swiper:
+  intl:
+  flutter_svg:
+  line_icons:
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -69,7 +72,8 @@ flutter:
     - assets/
     - assets/event/
     - assets/quick/
-
+    - assets/booking/
+    - assets/images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

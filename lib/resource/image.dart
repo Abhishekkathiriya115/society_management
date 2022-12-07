@@ -14,3 +14,5 @@ const quick5 = 'assets/quick/userImage.png';
 const quick6 = 'assets/quick/webInterFace.png';
 
 
+const theater = 'assets/booking/theater.jpg';
+const hall = 'assets/booking/hall.jpg';

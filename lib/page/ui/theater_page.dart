@@ -17,7 +17,7 @@ class TheaterPage extends GetView<TheaterController> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(event3),
+            Container(width:Get.width,height:Get.width/2,child: Image.asset(theater, fit: BoxFit.fill)),
             smallBoxWidget(controller.movieList),
             Padding(
               padding: const EdgeInsets.all(15.0),
@@ -64,6 +64,8 @@ class TheaterPage extends GetView<TheaterController> {
                           );
                         }),
                   ),
+                  const SizedBox(height: 20),
+                  kPrimaryButton('Booking Now',(){})
                 ],
               ),
             ),

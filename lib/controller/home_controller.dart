@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:society_management/route/route.dart';
 
 import '../resource/image.dart';
 
@@ -61,5 +62,13 @@ class HomeController extends GetxController {
 
   List bookingNameList = [
     'Theater','Swiming Pool','Function Hall','Club House'
+  ];
+
+  List bookingPage = [
+    AppRoute.theaterPage,
+    AppRoute.functionHallPage,
+    AppRoute.functionHallPage,
+    AppRoute.functionHallPage,
+    AppRoute.theaterPage,
   ];
 }
